@@ -22,14 +22,14 @@ const styleCard = {
   "backgroundColor": "#f0f0f0"
 }
 const RestaurantCard = (props)=>{
-  const {resName,cusines} = props;
+  const {name, cloudinaryImageId, costForTwo, cuisines, avgRating} = props.resData.card.card.info;
   return (
     <div className="res-card" style={styleCard}>
-      <img className="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/8a0248d5a78a9d4ee446fd9ef5747421" alt="res-logo"></img>
-      <h3>{resName}</h3>
-      <h4>{cusines  }</h4>
-      <h4>4.6 Stars</h4>
-      <h4>25-35 Minutes</h4>
+      <img className="res-logo" src= {"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} alt="res-logo"></img>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(',')}</h4>
+      <h4>{avgRating} Stars</h4>
+      <h4>{costForTwo}</h4>
     </div>
   );
 }
@@ -636,10 +636,13 @@ const Body = ()=>{
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard resName = "Meghana Foods" cusines= "Biryani,North Indian,Asian" />
-        <RestaurantCard resName = "KFC" cusines= "Burger,Fast Food"/>
-        <RestaurantCard/>
-        <RestaurantCard/>
+        {
+          resList.map((resData)=>
+             (
+              <RestaurantCard resData = {resData}/>
+            )
+          )
+        }
       </div>
     </div>
   )
