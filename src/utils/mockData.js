@@ -1,4 +1,4 @@
-const resList = [
+const rsList = [
   {
     card: {
       card: {
@@ -579,4 +579,4 @@ const resList = [
     },
   },
 ];
-export default resList;
+export default rsList;

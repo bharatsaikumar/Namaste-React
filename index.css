@@ -27,6 +27,7 @@
     padding: 5px;
     margin: 5px;
     width: 250px;
+ display: flex;
 }
 
 .res-card:hover{
@@ -40,4 +41,9 @@
 .res-container {
     display: flex;
     text-wrap: nowrap;
+}
+
+.btn{
+    margin: 10px;
+    cursor: pointer;
 }
